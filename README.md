@@ -1,16 +1,10 @@
-# weatherapp_starter_project
-
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+# Weatherapp
+A simple weather application using Flutter
+## Getting started
+* Icons : https://icons8.com/icon/set/weather/ios--static--blue
+ 
+* Weather Data : https://openweathermap.org
+ 
+* Framework : https://github.com/jonataslaw/getx
+ 
+* Starter project : https://github.com/backslashflutter/weatherapp_starter_project
