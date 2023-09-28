@@ -28,10 +28,23 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
+                  Center(
+                    child: SizedBox(
+                      width: MediaQuery.of(context).size.width / 1.5,
+                      child: Text(
+                        "A Simple Weather App using GetX",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                            fontSize: 24,
+                            fontWeight: FontWeight.w400,
+                            color: Colors.blue[700]),
+                      ),
+                    ),
+                  ),
                   Image.asset(
                     "assets/icons/weather.png",
-                    height: MediaQuery.of(context).size.height/4,
-                    width: MediaQuery.of(context).size.width/4,
+                    height: MediaQuery.of(context).size.height / 4,
+                    width: MediaQuery.of(context).size.width / 4,
                   ),
                   const CircularProgressIndicator()
                 ],

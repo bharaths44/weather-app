@@ -49,7 +49,7 @@ class _HeaderWidgetState extends State<HeaderWidget> {
                 borderRadius: BorderRadius.circular(10.0)),
             child: const Center(
               child: Text(
-                "Weather App - GetX",
+                "Weather App",
                 style: TextStyle(
                     fontSize: 37,
                     color: Colors.white,
