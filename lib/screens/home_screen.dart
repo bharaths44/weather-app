@@ -29,9 +29,9 @@ class _HomeScreenState extends State<HomeScreen> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Image.asset(
-                    "assets/icons/clouds.png",
-                    height: 200,
-                    width: 200,
+                    "assets/icons/weather.png",
+                    height: MediaQuery.of(context).size.height/4,
+                    width: MediaQuery.of(context).size.width/4,
                   ),
                   const CircularProgressIndicator()
                 ],
