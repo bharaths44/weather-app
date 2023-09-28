@@ -13,39 +13,42 @@ class CurrentWeatherWidget extends StatelessWidget {
     return Column(
       children: [
         //tempeture area
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            Image.asset(
-              "assets/weather/${weatherDataCurrent.current.weather![0].icon}.png",
-              height: 96,
-              width: 96,
-            ),
-            Container(
-              height: 50,
-              width: 1,
-              color: const Color.fromARGB(255, 30, 30, 154),
-            ),
-            RichText(
-              text: TextSpan(children: [
-                TextSpan(
-                    text: "${weatherDataCurrent.current.temp!.toInt()}°",
-                    style: const TextStyle(
-                      fontWeight: FontWeight.w600,
-                      fontSize: 68,
-                      color: Colors.black,
-                    )),
-                TextSpan(
-                    text:
-                        "${weatherDataCurrent.current.weather![0].description}",
-                    style: const TextStyle(
-                      fontWeight: FontWeight.w500,
-                      fontSize: 14,
-                      color: Colors.grey,
-                    )),
-              ]),
-            )
-          ],
+        SizedBox(
+          height: MediaQuery.of(context).size.height / 6,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              Image.asset(
+                "assets/weather/${weatherDataCurrent.current.weather![0].icon}.png",
+                height: 96,
+                width: 96,
+              ),
+              Container(
+                height: 50,
+                width: 1,
+                color: const Color.fromARGB(255, 30, 30, 154),
+              ),
+              RichText(
+                text: TextSpan(children: [
+                  TextSpan(
+                      text: "${weatherDataCurrent.current.temp!.toInt()}°",
+                      style: const TextStyle(
+                        fontWeight: FontWeight.w600,
+                        fontSize: 68,
+                        color: Colors.black,
+                      )),
+                  TextSpan(
+                      text:
+                          "${weatherDataCurrent.current.weather![0].description}",
+                      style: const TextStyle(
+                        fontWeight: FontWeight.w500,
+                        fontSize: 14,
+                        color: Colors.grey,
+                      )),
+                ]),
+              )
+            ],
+          ),
         ),
 
         const SizedBox(
@@ -118,7 +121,7 @@ class CurrentWeatherWidget extends StatelessWidget {
                   child: Text(
                     "${weatherDataCurrent.current.humidity}%",
                     style: const TextStyle(
-                        fontSize: 12, fontWeight: FontWeight.w400),
+                        fontSize: 15, fontWeight: FontWeight.w400),
                     textAlign: TextAlign.center,
                   ),
                 )

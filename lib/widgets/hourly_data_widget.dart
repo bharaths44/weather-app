@@ -21,7 +21,8 @@ class HourlyDataWidget extends StatelessWidget {
         Container(
           margin: const EdgeInsets.symmetric(vertical: 5, horizontal: 20),
           alignment: Alignment.topCenter,
-          child: const Text("Today", style: TextStyle(fontSize: 18)),
+          child: const Text("Today",
+              style: TextStyle(fontSize: 25, fontWeight: FontWeight.w500)),
         ),
         hourlyList(),
       ],
@@ -55,7 +56,7 @@ class HourlyDataWidget extends StatelessWidget {
                           color: CustomColors.dividerLine.withAlpha(150))
                     ],
                     gradient: cardIndex.value == index
-                        ?  LinearGradient(colors: [
+                        ? LinearGradient(colors: [
                             Colors.blue.shade200,
                             Colors.blue.shade300,
                           ])
@@ -76,6 +77,7 @@ class HourlyDataWidget extends StatelessWidget {
 }
 
 // hourly details class
+// ignore: must_be_immutable
 class HourlyDetails extends StatelessWidget {
   int temp;
   int index;

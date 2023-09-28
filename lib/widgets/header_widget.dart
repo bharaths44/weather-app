@@ -42,7 +42,7 @@ class _HeaderWidgetState extends State<HeaderWidget> {
         Center(
           child: Container(
             height: MediaQuery.of(context).size.height / 6,
-            margin: const EdgeInsets.only(left: 10, right: 10),
+            margin: const EdgeInsets.only(left: 15, right: 15),
             decoration: BoxDecoration(
                 color: Colors.blue.shade300,
                 border: Border.all(color: Colors.lightBlue),
@@ -53,7 +53,7 @@ class _HeaderWidgetState extends State<HeaderWidget> {
                 style: TextStyle(
                     fontSize: 37,
                     color: Colors.white,
-                    fontStyle: FontStyle.italic),
+                    fontWeight: FontWeight.bold),
               ),
             ),
           ),
@@ -75,7 +75,7 @@ class _HeaderWidgetState extends State<HeaderWidget> {
             child: Text(
               date,
               style:
-                  TextStyle(fontSize: 14, color: Colors.grey[700], height: 1.5),
+                  TextStyle(fontSize: 15, color: Colors.grey[800], height: 1.5),
             ),
           ),
         ),

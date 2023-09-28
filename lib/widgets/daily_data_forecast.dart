@@ -18,7 +18,7 @@ class DailyDataForecast extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 400,
+      height: MediaQuery.of(context).size.height / 2.5,
       margin: const EdgeInsets.all(20),
       padding: const EdgeInsets.all(15),
       decoration: BoxDecoration(
@@ -29,62 +29,63 @@ class DailyDataForecast extends StatelessWidget {
           Container(
             alignment: Alignment.topLeft,
             margin: const EdgeInsets.only(bottom: 10),
-            child: const Text(
-              "Next Days",
-              style:
-                  TextStyle(color: CustomColors.textColorBlack, fontSize: 17),
+            child: const Center(
+              child: Text(
+                "Next Days",
+                style: TextStyle(
+                    color: CustomColors.textColorBlack,
+                    fontSize: 20,
+                    fontWeight: FontWeight.w500),
+              ),
             ),
           ),
-          dailyList(),
+          SizedBox(
+            height: MediaQuery.of(context).size.height / 3.5,
+            child: ListView.builder(
+              scrollDirection: Axis.vertical,
+              itemCount: weatherDataDaily.daily.length > 7
+                  ? 7
+                  : weatherDataDaily.daily.length,
+              itemBuilder: (context, index) {
+                return Column(
+                  children: [
+                    Container(
+                        height: 60,
+                        padding: const EdgeInsets.only(left: 10, right: 10),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
+                            SizedBox(
+                              width: 80,
+                              child: Text(
+                                getDay(weatherDataDaily.daily[index].dt),
+                                style: const TextStyle(
+                                    color: CustomColors.textColorBlack,
+                                    fontSize: 15),
+                              ),
+                            ),
+                            SizedBox(
+                              height: 45,
+                              width: 45,
+                              child: Image.asset(
+                                  "assets/weather/${weatherDataDaily.daily[index].weather![0].icon}.png"),
+                            ),
+                            Text(
+                              "${weatherDataDaily.daily[index].temp!.max}°/${weatherDataDaily.daily[index].temp!.min}°",
+                              style: const TextStyle(fontSize: 15),
+                            )
+                          ],
+                        )),
+                    Container(
+                      height: 1,
+                      color: CustomColors.dividerLine,
+                    )
+                  ],
+                );
+              },
+            ),
+          )
         ],
-      ),
-    );
-  }
-
-  Widget dailyList() {
-    return SizedBox(
-      height: 300,
-      child: ListView.builder(
-        scrollDirection: Axis.vertical,
-        itemCount: weatherDataDaily.daily.length > 7
-            ? 7
-            : weatherDataDaily.daily.length,
-        itemBuilder: (context, index) {
-          return Column(
-            children: [
-              Container(
-                  height: 60,
-                  padding: const EdgeInsets.only(left: 10, right: 10),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      SizedBox(
-                        width: 80,
-                        child: Text(
-                          getDay(weatherDataDaily.daily[index].dt),
-                          style: const TextStyle(
-                              color: CustomColors.textColorBlack, fontSize: 15),
-                        ),
-                      ),
-                      SizedBox(
-                        height: 30,
-                        width: 30,
-                        child: Image.asset(
-                            "assets/weather/${weatherDataDaily.daily[index].weather![0].icon}.png"),
-                      ),
-                      Text(
-                        "${weatherDataDaily.daily[index].temp!.max}°/${weatherDataDaily.daily[index].temp!.min}°",
-                        style: const TextStyle(fontSize: 15),
-                      )
-                    ],
-                  )),
-              Container(
-                height: 1,
-                color: CustomColors.dividerLine,
-              )
-            ],
-          );
-        },
       ),
     );
   }
