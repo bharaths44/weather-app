@@ -110,7 +110,7 @@ class CurrentWeatherWidget extends StatelessWidget {
         Container(
           height: 50,
           width: 1,
-          color: CustomColors.dividerLine,
+          color: const Color.fromARGB(255, 30, 30, 154),
         ),
         RichText(
           text: TextSpan(children: [
@@ -119,7 +119,7 @@ class CurrentWeatherWidget extends StatelessWidget {
                 style: const TextStyle(
                   fontWeight: FontWeight.w600,
                   fontSize: 68,
-                  color: CustomColors.textColorBlack,
+                  color: Colors.black,
                 )),
             TextSpan(
                 text: "${weatherDataCurrent.current.weather![0].description}",

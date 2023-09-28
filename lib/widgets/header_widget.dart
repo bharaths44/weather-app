@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:weatherapp_starter_project/controller/global_controller.dart';
+import 'package:weatherapp_starter_project/utils/custom_colors.dart';
 
 class HeaderWidget extends StatefulWidget {
   const HeaderWidget({Key? key}) : super(key: key);
@@ -39,9 +40,25 @@ class _HeaderWidgetState extends State<HeaderWidget> {
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
+        Center(
+          child: Container(
+            height: MediaQuery.of(context).size.height/6,
+            margin: const EdgeInsets.only(left: 10, right: 10),
+            decoration: BoxDecoration(
+                color: CustomColors.firstGradientColor,
+                border: Border.all(color: Colors.lightBlue),
+                borderRadius: BorderRadius.circular(10.0)),
+            child: const Center(
+              child: Text(
+                "Weather App - GetX",
+                style: TextStyle(fontSize: 35,color: Colors.white),
+              ),
+            ),
+          ),
+        ),
         Container(
           margin: const EdgeInsets.only(left: 20, right: 20),
-          alignment: Alignment.topLeft,
+          alignment: Alignment.topCenter,
           child: Center(
             child: Text(
               city,
