@@ -55,9 +55,9 @@ class HourlyDataWidget extends StatelessWidget {
                           color: CustomColors.dividerLine.withAlpha(150))
                     ],
                     gradient: cardIndex.value == index
-                        ? const LinearGradient(colors: [
-                            CustomColors.firstGradientColor,
-                            CustomColors.secondGradientColor
+                        ?  LinearGradient(colors: [
+                            Colors.blue.shade200,
+                            Colors.blue.shade300,
                           ])
                         : null),
                 child: HourlyDetails(

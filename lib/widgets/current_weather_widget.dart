@@ -104,8 +104,8 @@ class CurrentWeatherWidget extends StatelessWidget {
       children: [
         Image.asset(
           "assets/weather/${weatherDataCurrent.current.weather![0].icon}.png",
-          height: 80,
-          width: 80,
+          height: 96,
+          width: 96,
         ),
         Container(
           height: 50,

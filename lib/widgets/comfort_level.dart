@@ -43,8 +43,8 @@ class ComfortLevel extends StatelessWidget {
                           trackColor:
                               CustomColors.firstGradientColor.withAlpha(100),
                           progressBarColors: [
-                            CustomColors.firstGradientColor,
-                            CustomColors.secondGradientColor
+                            Colors.blue.shade200,
+                            Colors.blue.shade300,
                           ])),
                 ),
               ),
